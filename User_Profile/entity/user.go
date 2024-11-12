@@ -1,16 +1,14 @@
 package entity
 
-import "time"
+import "github.com/congmanh18/lucas-core/record"
 
 type User struct {
-	ID           *string `gorm:"primaryKey"`
+	record.BaseEntity
 	Username     *string
 	PasswordHash *string
 	Email        *string
 	Phone        *string
 	Role         *string
-	CreatedAt    time.Time
-	UpdatedAt    time.Time
 }
 
 func (u User) TableName() string {
